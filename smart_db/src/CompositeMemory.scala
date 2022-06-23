@@ -19,7 +19,7 @@ object CompositeMemory{
 		def TODO_16	= 16
 		def TODO_NUM_WORDS	= 4
 		def TODO_SHIFT_IDX2ADDR = 7 //32 bytes(5) + 4 words(2)
-		def TODO_HBM_DEPTH = 1024
+		def TODO_HBM_DEPTH = 10
 		
 		val io = IO(new Bundle{
 			val req_wr				= Flipped(Decoupled(new Request(config)))

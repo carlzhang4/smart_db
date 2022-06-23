@@ -1,6 +1,5 @@
 package smart_db
 
-import smart_db.ip_core._
 import smart_db.tmp._
 import common.axi._
 import common._

@@ -14,10 +14,7 @@ object elaborate extends App {
 	args(0) match{
 		case "SMART_DB_TOP" => stage.execute(arr,Seq(ChiselGeneratorAnnotation(() => new SMART_DB_TOP()),dir))
 		case "CUCKOO" => stage.execute(arr,Seq(ChiselGeneratorAnnotation(() => new CUCKOO(4,60,10,33,256)),dir))
-		case "TestRouter" => stage.execute(arr,Seq(ChiselGeneratorAnnotation(() => new TestRouter()),dir))
-		case "TestArbiter" => stage.execute(arr,Seq(ChiselGeneratorAnnotation(() => new TestArbiter()),dir))
 		case "BlockHandler" => stage.execute(arr,Seq(ChiselGeneratorAnnotation(() => BlockHandler.top(config, 1024)),dir))
-		case "TestConverter" => stage.execute(arr,Seq(ChiselGeneratorAnnotation(() => new TestConverter()),dir))
 		case _ => println("Module match failed!")
 	}
 }

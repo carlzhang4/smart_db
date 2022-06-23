@@ -127,6 +127,7 @@ object LockHandler{
 			
 			res.key 						:= req.key
 			res.tb_idx 						:= req.tb_idx
+			res.bucket_idx_raw				:= req.bucket_idx_raw
 			res.bucket_idx 					:= req.bucket_idx
 			res.lock 						:= req.lock
 			res.is_unlock 					:= req.is_unlock

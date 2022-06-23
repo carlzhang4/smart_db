@@ -30,13 +30,14 @@ object BlockHandler{
 		})
 
 		def TODO_16 = 16
+		def TODO_512 = 512
 		def width_bits_minus_1 = Math.log2(depth) - 1
 
 		val table = RegInit(VecInit(Seq.fill(depth)(0.U(1.W))))
 		
-		val q_wait	= XQueue(new Request(config), TODO_16)
-		val q_work	= XQueue(new Request(config), TODO_16)
-		val q_grant	= XQueue(new Request(config), TODO_16)
+		val q_wait	= XQueue(new Request(config), TODO_512)
+		val q_work	= XQueue(new Request(config), TODO_512)
+		val q_grant	= XQueue(new Request(config), TODO_512)
 		val abiter 	= XArbiter(new Request(config), 2)
 		abiter.io.in(0)	<> io.req
 		abiter.io.in(1)	<> q_wait.io.out

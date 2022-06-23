@@ -3,4 +3,8 @@
 /.bloop
 /.metals
 /.vscode
+/sw/data_generate/.vscode
+/sw/data_generate/build
+/sw/data_generate/data
+/sw/data_generate/libhw/build
 config.json
