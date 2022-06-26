@@ -608,13 +608,13 @@ DMA#(256,10) hbm3(
 	integer fd;
 	
 	initial begin
-		fd = $fopen("/home/amax/cj/smart_db_sw/data_generate/data/output", "w");
+		fd = $fopen("/home/amax/cj/chisel_common/sw/data_generate/data/output", "w");
 		$display("fd = %x\n",fd);
 		
-		data_file0 = $fopen("/home/amax/cj/smart_db_sw/data_generate/data/oc_mem0.txt", "r");
-		data_file1 = $fopen("/home/amax/cj/smart_db_sw/data_generate/data/oc_mem1.txt", "r");
-		data_file2 = $fopen("/home/amax/cj/smart_db_sw/data_generate/data/oc_mem2.txt", "r");
-		data_file3 = $fopen("/home/amax/cj/smart_db_sw/data_generate/data/oc_mem3.txt", "r");
+		data_file0 = $fopen("/home/amax/cj/chisel_common/sw/data_generate/data/oc_mem0.txt", "r");
+		data_file1 = $fopen("/home/amax/cj/chisel_common/sw/data_generate/data/oc_mem1.txt", "r");
+		data_file2 = $fopen("/home/amax/cj/chisel_common/sw/data_generate/data/oc_mem2.txt", "r");
+		data_file3 = $fopen("/home/amax/cj/chisel_common/sw/data_generate/data/oc_mem3.txt", "r");
 
 		
 		reset <= 1;
@@ -634,10 +634,10 @@ DMA#(256,10) hbm3(
 		out_io_res_success_1.start();
 		out_io_res_success_2.start();
 		out_io_res_success_3.start();
-		hbm0.init_from_file("/home/amax/cj/smart_db_sw/data_generate/data/hbm0.txt");
-		hbm1.init_from_file("/home/amax/cj/smart_db_sw/data_generate/data/hbm1.txt");
-		hbm2.init_from_file("/home/amax/cj/smart_db_sw/data_generate/data/hbm2.txt");
-		hbm3.init_from_file("/home/amax/cj/smart_db_sw/data_generate/data/hbm3.txt");
+		hbm0.init_from_file("/home/amax/cj/chisel_common/sw/data_generate/data/hbm0.txt");
+		hbm1.init_from_file("/home/amax/cj/chisel_common/sw/data_generate/data/hbm1.txt");
+		hbm2.init_from_file("/home/amax/cj/chisel_common/sw/data_generate/data/hbm2.txt");
+		hbm3.init_from_file("/home/amax/cj/chisel_common/sw/data_generate/data/hbm3.txt");
 		#10;
 		if (data_file0 == 0 || data_file1 == 0 || data_file2 == 0 || data_file3 == 0) begin
 			$display("data_file handle was NULL");
@@ -681,7 +681,7 @@ DMA#(256,10) hbm3(
 
 		#50;
 		//key, addr, lock, is_unlock, tb_idx, len, last 
-		in_io_req.init_from_file("/home/amax/cj/smart_db_sw/data_generate/data/reqs.txt");
+		in_io_req.init_from_file("/home/amax/cj/chisel_common/sw/data_generate/data/reqs.txt");
 	end
 
     always #5 clock=~clock;
